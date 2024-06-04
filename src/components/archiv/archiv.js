@@ -11,13 +11,13 @@ import { Icon } from "semantic-ui-react";
 //swal
 import Swal from "sweetalert2";
 import swalWithBootstrapButtons from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 export default function Archiv() {
 
     document.title = 'Archives';
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const employeesArchiv = useSelector(state => state.employees.employeesArchiv);
     const rows = employeesArchiv;
     const columns = [

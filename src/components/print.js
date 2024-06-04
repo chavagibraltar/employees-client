@@ -1,11 +1,6 @@
-import { useSelector } from "react-redux";
-import React, { useState } from "react";
-import { Icon, Modal, Select, Input } from "semantic-ui-react";
+import React from "react";
+import { Icon } from "semantic-ui-react";
 import { Button } from '@mui/material';
-
-
-// import React from 'react';
-// import { Button, Icon } from 'semantic-ui-react';
 
 const PrintButton2 = () => {
     const handlePrint = () => {

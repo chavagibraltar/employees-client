@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { useForm, Controller, useFieldArray } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
+// import { useForm, Controller, useFieldArray } from 'react-hook-form';
 import { useLocation, useNavigate } from "react-router-dom";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { getRoles } from "../services/roleService";
-import { addEmployee, deleteCurrentEmployee, editEmployee } from '../services/employeesService';
+//import { getRoles } from "../services/roleService";
+import { addEmployee, editEmployee } from '../services/employeesService';
+// import { addEmployee, deleteCurrentEmployee, editEmployee } from '../services/employeesService';
 // import { Modal } from 'react-bootstrap';
 import * as yup from 'yup';
 // import { Button } from '@mui/material';
@@ -14,11 +16,10 @@ import * as yup from 'yup';
 // import Stack from '@mui/joy/Stack';
 // import { ArrowDropDown } from '@mui/icons-material';
 //brachi
-import { Select, Button, Icon, Confirm, Container, Form, FormField, FormGroup, Header, Input, Segment, Checkbox } from "semantic-ui-react";
-import * as sctionType from '../store/action'
+import { Select, Button, Icon, Container, Form, FormField, FormGroup, Header } from "semantic-ui-react";
+//import * as sctionType from '../store/action'
 import Swal from "sweetalert2";
 import swalWithBootstrapButtons from "sweetalert2";
-import dayjs from "dayjs";
 
 function isValidTZ(message= 'is valid') {
   return this.test("isValidTZ", message, function (id) {
@@ -74,10 +75,10 @@ const AddEditEmployee = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [showConfirm, setShowConsfirm] = useState(false);
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+  // const [showConfirm, setShowConsfirm] = useState(false);
 
   const [d, setD] = useState([])
 
@@ -97,7 +98,7 @@ const AddEditEmployee = () => {
   }, [allRoles]);
 
   useEffect(() => {
-    if (location.pathname == '/addEmployee') {
+    if (location.pathname === '/addEmployee') {
       document.title = 'Add Employee'
     }
     else {
@@ -113,7 +114,7 @@ const AddEditEmployee = () => {
         ...rest,
         isActive: true,
       }
-      if (location.pathname == '/addEmployee') {
+      if (location.pathname === '/addEmployee') {
         Swal.fire({
           title: "Are you sure?",
           text: "You will have the option to edit the details again",
@@ -210,8 +211,8 @@ const AddEditEmployee = () => {
             <FormField required={true} error={errors.gender?.message} id='text'>
               <label id='text'>Gender</label>
               <select {...register("gender")} >
-                <option value="0" selected={(employee && employee.sex == "0") && (employee.sex !== "1")}> Male </option>
-                <option value="1" selected={(employee && employee.sex == "1") && (employee.sex !== "0")}> Female </option>
+                <option value="0" selected={(employee && employee.sex === "0") && (employee.sex !== "1")}> Male </option>
+                <option value="1" selected={(employee && employee.sex === "1") && (employee.sex !== "0")}> Female </option>
               </select>
               <p className="error">{errors.gender?.message}</p>
             </FormField>

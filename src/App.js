@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
-import React, { useState } from "react";
+import React from "react";
+// import React, { useState } from "react";
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
 import Header from './components/header'
@@ -14,14 +15,14 @@ import AddRole from './components/roles/addRole';
 
 //mui
 import '@fontsource/inter';
-import AddEdit from './components/employees/addEditEmployee';
+// import AddEdit from './components/employees/addEditEmployee';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 
 export default function App() {
 

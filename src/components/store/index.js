@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware} from 'redux';
-import reducer from "./EmployeesReducer";
+// import reducer from "./EmployeesReducer";
 import { thunk } from 'redux-thunk';
 // import EmployeesReducer from './employeesReducer';
 // import RolesReducer from './rolesReducer';

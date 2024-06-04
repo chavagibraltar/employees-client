@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as actionType from '../store/action'
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export const getEmployees = () => {
     return dispatch => {
